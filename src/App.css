@@ -1,18 +1,53 @@
 .App {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding: 10px;
+/* 스마트폰 화면이 전체 화면을 차지하도록 설정 */
+.phone-screen {
+  width: 100%;
+  max-width: 375px;
+  height: 100vh;
+  max-height: 812px;
+}
+
+@media (max-width: 480px) {
+  .App {
+    padding: 0;
+  }
+  
+  .phone-screen {
+    max-width: 100%;
+    height: 100vh;
+    border-radius: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .App {
+    padding: 40px;
+  }
+  
+  .phone-screen {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (min-width: 1024px) {
+  .phone-screen {
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.4);
   }
 }
