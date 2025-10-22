@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .pacman-header {
@@ -78,6 +79,7 @@
   align-items: flex-start;
   max-width: 800px;
   width: 100%;
+  justify-content: center;
 }
 
 .game-info {
@@ -88,6 +90,7 @@
   backdrop-filter: blur(10px);
   min-width: 200px;
   border: 2px solid #ffd700;
+  flex-shrink: 0;
 }
 
 .info-item {
@@ -114,16 +117,24 @@
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
 }
 
 .maze {
   position: relative;
   background: #000;
+  width: 380px;
+  height: 420px;
+  overflow: hidden;
 }
 
 .cell {
   position: absolute;
   box-sizing: border-box;
+  width: 20px;
+  height: 20px;
 }
 
 .cell-0 {
@@ -186,6 +197,8 @@
   z-index: 10;
   box-shadow: 0 0 10px #ffd700;
   animation: pacmanMouth 0.3s infinite alternate;
+  width: 16px;
+  height: 16px;
 }
 
 .pacman::before {
@@ -226,6 +239,8 @@
   transition: all 0.1s ease;
   z-index: 5;
   box-shadow: 0 0 8px currentColor;
+  width: 16px;
+  height: 16px;
 }
 
 .ghost::before {
@@ -244,11 +259,11 @@
   position: absolute;
   top: 20%;
   left: 20%;
-  width: 8px;
-  height: 8px;
+  width: 4px;
+  height: 4px;
   background: white;
   border-radius: 50%;
-  box-shadow: 12px 0 0 white, 6px 8px 0 2px black, 18px 8px 0 2px black;
+  box-shadow: 6px 0 0 white, 3px 4px 0 1px black, 9px 4px 0 1px black;
 }
 
 .ghost-red {
@@ -395,8 +410,15 @@
   }
   
   .maze {
+    width: 300px;
+    height: 320px;
     transform: scale(0.8);
-    transform-origin: top left;
+    transform-origin: center;
+  }
+  
+  .cell {
+    width: 16px;
+    height: 16px;
   }
   
   .controls-grid {
@@ -406,7 +428,14 @@
 
 @media (max-width: 480px) {
   .maze {
+    width: 240px;
+    height: 260px;
     transform: scale(0.6);
+  }
+  
+  .cell {
+    width: 12px;
+    height: 12px;
   }
   
   .game-info {
