@@ -1,0 +1,145 @@
+.game-list-container {
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.game-list-header {
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.game-list-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.game-list-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+.game-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--game-color);
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.game-card:active {
+  transform: translateY(-2px);
+}
+
+.game-icon {
+  font-size: 3rem;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--game-color), color-mix(in srgb, var(--game-color) 80%, white));
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.game-info {
+  flex: 1;
+}
+
+.game-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+}
+
+.game-info p {
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.game-arrow {
+  font-size: 1.5rem;
+  color: #999;
+  transition: all 0.3s ease;
+}
+
+.game-card:hover .game-arrow {
+  color: var(--game-color);
+  transform: translateX(5px);
+}
+
+.game-list-footer {
+  text-align: center;
+  margin-top: 40px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .game-list-container {
+    padding: 15px;
+  }
+  
+  .game-list-header h1 {
+    font-size: 2rem;
+  }
+  
+  .games-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .game-card {
+    padding: 20px;
+    gap: 15px;
+  }
+  
+  .game-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2.5rem;
+  }
+  
+  .game-info h3 {
+    font-size: 1.3rem;
+  }
+}
