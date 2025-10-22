@@ -9,7 +9,6 @@ const GameList = () => {
     {
       id: 'tetris',
       name: '테트리스',
-      description: '클래식 블록 퍼즐 게임',
       icon: '🧩',
       color: '#FF6B6B',
       path: '/tetris'
@@ -17,7 +16,6 @@ const GameList = () => {
     {
       id: 'pacman',
       name: '팩맨',
-      description: '미로에서 점을 먹으며 유령을 피하는 게임',
       icon: '🟡',
       color: '#FFD700',
       path: '/pacman'
@@ -30,32 +28,36 @@ const GameList = () => {
   };
 
   return (
-    <div className="game-list-container">
-      <div className="game-list-header">
-        <h1>🎮 게임 허브</h1>
-        <p>즐거운 게임 시간을 보내세요!</p>
+    <div className="phone-screen">
+      <div className="status-bar">
+        <div className="time">9:41</div>
+        <div className="status-icons">
+          <span>📶</span>
+          <span>📶</span>
+          <span>🔋</span>
+        </div>
       </div>
       
-      <div className="games-grid">
-        {games.map((game) => (
-          <div
-            key={game.id}
-            className="game-card"
-            style={{ '--game-color': game.color }}
-            onClick={() => handleGameClick(game.path)}
-          >
-            <div className="game-icon">{game.icon}</div>
-            <div className="game-info">
-              <h3>{game.name}</h3>
-              <p>{game.description}</p>
+      <div className="home-screen">
+        <div className="app-grid">
+          {games.map((game) => (
+            <div
+              key={game.id}
+              className="app-icon"
+              style={{ '--app-color': game.color }}
+              onClick={() => handleGameClick(game.path)}
+            >
+              <div className="app-icon-background">
+                <div className="app-icon-emoji">{game.icon}</div>
+              </div>
+              <div className="app-name">{game.name}</div>
             </div>
-            <div className="game-arrow">→</div>
-          </div>
-        ))}
-      </div>
-      
-      <div className="game-list-footer">
-        <p>더 많은 게임이 곧 추가될 예정입니다!</p>
+          ))}
+        </div>
+        
+        <div className="dock">
+          <div className="dock-background"></div>
+        </div>
       </div>
     </div>
   );
