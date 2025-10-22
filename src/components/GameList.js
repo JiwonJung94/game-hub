@@ -13,6 +13,14 @@ const GameList = () => {
       icon: '🧩',
       color: '#FF6B6B',
       path: '/tetris'
+    },
+    {
+      id: 'pacman',
+      name: '팩맨',
+      description: '미로에서 점을 먹으며 유령을 피하는 게임',
+      icon: '🟡',
+      color: '#FFD700',
+      path: '/pacman'
     }
     // 새로운 게임을 여기에 추가할 수 있습니다
   ];
