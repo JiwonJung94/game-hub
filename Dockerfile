@@ -1,7 +1,7 @@
 # 멀티스테이지 빌드를 사용하여 React 앱을 빌드하고 nginx로 서빙
 
 # 1단계: Node.js를 사용하여 React 앱 빌드
-FROM node:18-alpine as build
+FROM node:18-alpine AS build
 
 # 작업 디렉토리 설정
 WORKDIR /app
@@ -10,7 +10,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # 의존성 설치
-RUN npm ci --only=production
+RUN npm install
 
 # 소스 코드 복사
 COPY . .
