@@ -69,7 +69,6 @@
 
 .app-icon:hover {
   transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.1);
 }
 
 .app-icon:active {
@@ -89,6 +88,7 @@
   margin-bottom: 6px;
   position: relative;
   overflow: hidden;
+  transition: all 0.2s ease;
 }
 
 .app-icon-background::before {
@@ -102,11 +102,23 @@
   border-radius: 12px;
 }
 
+/* 앱 아이콘 호버 효과 */
+.app-icon:hover .app-icon-background {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
 /* 앱 아이콘 이모지 */
 .app-icon-emoji {
   font-size: 28px;
   z-index: 1;
   position: relative;
+  transition: all 0.2s ease;
+}
+
+/* 앱 아이콘 호버 시 이모지 효과 */
+.app-icon:hover .app-icon-emoji {
+  transform: scale(1.1);
 }
 
 /* 앱 이름 */
@@ -118,6 +130,13 @@
   line-height: 1.2;
   max-width: 60px;
   word-wrap: break-word;
+  transition: all 0.2s ease;
+}
+
+/* 앱 아이콘 호버 시 이름 효과 */
+.app-icon:hover .app-name {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
 }
 
 /* 도크 (하단 바) */
